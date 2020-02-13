@@ -249,7 +249,7 @@ void DeviceInfo::grabDevicesFromPciRoot(IORegistryEntry *pciRoot) {
 					DBGLOG("dev", "found HDEF device %s", safeString(name));
 					audioBuiltinAnalog = obj;
 				}
-			} else if (vendor == WIOKit::VendorID::Intel && (code == WIOKit::ClassCode::IMEI || (name &&
+			} else if (vendor == WIOKit::VendorID::Intel && (code == WIOKit::ClassCode::IMEI && (name &&
 				(!strcmp(name, "IMEI") || !strcmp(name, "HECI") || !strcmp(name, "MEI"))))) {
 				// Fortunately IMEI is always made by Intel
 				DBGLOG("dev", "found IMEI device %s", safeString(name));
